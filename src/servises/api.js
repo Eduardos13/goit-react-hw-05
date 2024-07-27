@@ -23,3 +23,12 @@ export const fetchWeekMovies = async () => {
   );
   return responce.data.results;
 };
+
+export const fetchMovieById = async (id) => {
+  const responce = await axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
+    params: {
+      api_key: '5d8bf2b2ccb9e545eda81c5c498af722',
+    },
+  });
+  return responce.data;
+};

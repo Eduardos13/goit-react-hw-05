@@ -9,7 +9,7 @@ const MovieList = ({ movies }) => {
       <ul className={s.moviesList}>
         {movies.map((movie) => (
           <li key={movie.id} className={s.moviesItem}>
-            <Link to={movie.id.toString()}>
+            <Link to={`/movies/${movie.id.toString()}`}>
               <MovieCard movie={movie} />
             </Link>
           </li>
