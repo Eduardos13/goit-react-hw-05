@@ -6,6 +6,7 @@ import MoviesPage from '../../pages/MoviesPage/MoviesPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 import MoviesOfTheDay from '../MoviesOfTheDay/MoviesOfTheDay';
 import MoviesOfTheWeek from '../MoviesOfTheWeek/MoviesOfTheWeek';
+import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="popularofweek" element={<MoviesOfTheWeek />} />
         </Route>
         <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>

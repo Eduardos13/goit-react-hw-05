@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import s from './MovieList.module.css';
+import { Link } from 'react-router-dom';
 
 const MovieList = ({ movies }) => {
   return (
@@ -8,7 +9,9 @@ const MovieList = ({ movies }) => {
       <ul className={s.moviesList}>
         {movies.map((movie) => (
           <li key={movie.id} className={s.moviesItem}>
-            <MovieCard movie={movie} />
+            <Link to={movie.id.toString()}>
+              <MovieCard movie={movie} />
+            </Link>
           </li>
         ))}
       </ul>
