@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import s from './MoviesPage.module.css';
 

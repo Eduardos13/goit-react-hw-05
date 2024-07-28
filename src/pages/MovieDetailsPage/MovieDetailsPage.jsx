@@ -28,10 +28,10 @@ const MovieDetailsPage = () => {
       </div>
       <ul>
         <li>
-          <NavLink to="cast"> Cast</NavLink>
+          <NavLink to={`/movies/${params.movieId}/cast`}> Cast</NavLink>
         </li>
         <li>
-          <NavLink to="reviews"> Rewievs</NavLink>
+          <NavLink to={`/movies/${params.movieId}/reviews`}> Reviews</NavLink>
         </li>
       </ul>
       <Outlet />

@@ -6,7 +6,7 @@ const SearchBar = () => {
     <div className={s.searchBarWrapper}>
       <h2 className={s.title}>Search for a movie...</h2>
       <div className={s.inputWrapper}>
-        <input type="text" className={s.input} placeholder="Search..." />
+        <input type="search" className={s.input} placeholder="Search..." />
         <button type="submit" className={s.searchBtn}>
           Search
         </button>
