@@ -42,6 +42,5 @@ export const fetchMovieCast = async (id) => {
       },
     }
   );
-  console.log(responce);
   return responce.data;
 };
