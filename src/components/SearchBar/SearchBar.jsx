@@ -2,10 +2,14 @@ import React from 'react';
 import s from './SearchBar.module.css';
 
 const SearchBar = ({ value, handleSearch, setQuery }) => {
+  const onSubmit = (event) => {
+    event.prevent.default();
+    handleSearch();
+  };
   return (
     <div className={s.searchBarWrapper}>
       <h2 className={s.title}>Search for a movie...</h2>
-      <div className={s.inputWrapper}>
+      <form className={s.inputWrapper} onSubmit={onSubmit}>
         <input
           type="search"
           value={value}
@@ -15,10 +19,10 @@ const SearchBar = ({ value, handleSearch, setQuery }) => {
           }}
           placeholder="Search..."
         />
-        <button onClick={handleSearch} type="submit" className={s.searchBtn}>
+        {/* <button type="submit" className={s.searchBtn}>
           Search
-        </button>
-      </div>
+        </button> */}
+      </form>
     </div>
   );
 };

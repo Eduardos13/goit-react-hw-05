@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../servises/api';
+import { GoArrowLeft } from 'react-icons/go';
+
 import s from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
@@ -20,20 +22,22 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      <button onClick={() => navigate(-1)}> Go back</button>
+      <button className={s.goBackBtn} onClick={() => navigate(-1)}>
+        <GoArrowLeft className={s.arrowBtn} />
+      </button>
       <div className={s.detailsWraper}>
-        <img src={posterUrl} alt="" />
+        <img src={posterUrl} alt="movie poster" width="360px" />
         <div className={s.movieDetails}>
           <h2>{movie.original_title}</h2>
           <p>User score: {Math.round((movie.vote_average * 100) / 10)} %</p>
           <p>Overwie: {movie.overview}</p>
         </div>
       </div>
-      <ul>
-        <li>
+      <ul className={s.aditionalInfo}>
+        <li className={s.infoBtn}>
           <NavLink to={`/movies/${params.movieId}/cast`}> Cast</NavLink>
         </li>
-        <li>
+        <li className={s.infoBtn}>
           <NavLink to={`/movies/${params.movieId}/reviews`}> Reviews</NavLink>
         </li>
       </ul>

@@ -8,6 +8,7 @@
   align-items: center;
   gap: 20px;
   margin-top: 80px;
+  margin-bottom: 50px;
 }
 
 .title {
@@ -23,7 +24,7 @@
 }
 
 .input {
-  width: 400px;
+  width: 600px;
   height: 50px;
   padding: 10px 10px 10px 30px;
   border: 1px rgb(192, 185, 185) solid;

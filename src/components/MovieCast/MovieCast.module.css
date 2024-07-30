@@ -1,0 +1,22 @@
+.castTitle {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.castTitle {
+  font-size: 28px;
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.castListItem {
+  font-size: 20px;
+  padding: 15px;
+}
