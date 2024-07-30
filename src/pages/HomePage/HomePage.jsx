@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import s from './HomePage.module.css';
+import clsx from 'clsx';
 
 const HomePage = () => {
   return (
     <div>
       <ul className={s.buttonsList}>
         <li className={s.buttonsItem}>
-          <NavLink to="popularofday"> Movies of the Day</NavLink>
+          <NavLink to="popularofday">Movies of the Day</NavLink>
         </li>
         <li className={s.buttonsItem}>
-          <NavLink to="popularofweek"> Movies of the Week</NavLink>
+          <NavLink to="popularofweek">Movies of the Week</NavLink>
         </li>
       </ul>
       <Outlet />

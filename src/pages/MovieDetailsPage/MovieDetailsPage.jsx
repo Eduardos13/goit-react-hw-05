@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../servises/api';
 import s from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const params = useParams();
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState(null);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetchMovieById(params.movieId).then((data) => setMovie(data));
+    fetchMovieById(params.movieId).then(setMovie);
   }, [params.movieId]);
 
   if (!movie) {
@@ -18,6 +20,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
+      <button onClick={() => navigate(-1)}> Go back</button>
       <div className={s.detailsWraper}>
         <img src={posterUrl} alt="" />
         <div className={s.movieDetails}>
