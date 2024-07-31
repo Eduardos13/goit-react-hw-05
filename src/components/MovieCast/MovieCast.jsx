@@ -23,6 +23,7 @@ const MovieCast = () => {
     };
     getCast();
   }, [params.movieId]);
+
   return (
     <div>
       <h2 className={s.castTitle}>Cast</h2>

@@ -11,6 +11,15 @@ const MovieReviews = () => {
     fetchMovieReviews(params.movieId).then(setReviews);
   }, [params.movieId]);
 
+  if (!reviews.length) {
+    return (
+      <div>
+        <h2 className={s.reviewTitle}>Reviews</h2>
+        <p className={s.noReviews}>No reviews</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h2 className={s.reviewTitle}>Reviews</h2>

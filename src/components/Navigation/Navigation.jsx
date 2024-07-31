@@ -9,14 +9,16 @@ const activeLink = ({ isActive }) => {
 
 const Navigation = () => {
   return (
-    <nav className={s.navigationList}>
-      <NavLink to="/" className={activeLink}>
-        Home
-      </NavLink>
-      <NavLink to="/movies" className={activeLink}>
-        Movies
-      </NavLink>
-    </nav>
+    <header className={s.header}>
+      <nav className={s.navigationList}>
+        <NavLink to="/" className={activeLink}>
+          Home
+        </NavLink>
+        <NavLink to="/movies" className={activeLink}>
+          Movies
+        </NavLink>
+      </nav>
+    </header>
   );
 };
 
