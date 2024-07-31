@@ -24,9 +24,9 @@ const App = () => {
       <Suspense fallback={<p>Loading...</p>}>
         <Routes>
           <Route path="/" element={<HomePage />}>
-            <Route index element={<Navigate to="popularofday" replace />} />
+            {/* <Route index element={<Navigate to="popularofday" replace />} />
             <Route path="popularofday" element={<MoviesOfTheDay />} />
-            <Route path="popularofweek" element={<MoviesOfTheWeek />} />
+            <Route path="popularofweek" element={<MoviesOfTheWeek />} /> */}
           </Route>
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
