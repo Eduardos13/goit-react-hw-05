@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchDayMovies } from '../../servises/api';
+// import { fetchDayMovies } from '../../servises/api';
 import MovieList from '../MovieList/MovieList';
 
 const MoviesOfTheDay = () => {

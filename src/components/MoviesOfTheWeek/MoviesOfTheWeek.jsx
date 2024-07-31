@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchWeekMovies } from '../../servises/api';
+// import { fetchWeekMovies } from '../../servises/api';
 import MovieList from '../MovieList/MovieList';
 
 const MoviesOfTheWeek = () => {
