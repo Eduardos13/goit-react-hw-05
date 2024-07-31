@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import { fetchMovieById } from '../../servises/api';
 import { GoArrowLeft } from 'react-icons/go';
-
 import s from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const params = useParams();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const backLink = useRef(location.state?.from ?? '/movies');
 
   useEffect(() => {
     fetchMovieById(params.movieId).then(setMovie);
@@ -22,7 +29,10 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      <button className={s.goBackBtn} onClick={() => navigate(-1)}>
+      <button
+        className={s.goBackBtn}
+        onClick={() => navigate(backLink.current)}
+      >
         <GoArrowLeft className={s.arrowBtn} />
       </button>
       <div className={s.detailsWraper}>

@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './SearchBar.module.css';
 
-const SearchBar = ({ value, handleSearch, setQuery }) => {
-  const onSubmit = (event) => {
-    event.prevent.default();
-    handleSearch();
+const SearchBar = ({ value, handleSearch }) => {
+  const [inputValue, setInputValue] = useState(value);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleSearch(inputValue);
   };
   return (
     <div className={s.searchBarWrapper}>
       <h2 className={s.title}>Search for a movie...</h2>
-      <form className={s.inputWrapper} onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit} className={s.inputWrapper}>
         <input
           type="search"
-          value={value}
+          value={inputValue}
           className={s.input}
           onChange={(event) => {
-            setQuery(event.target.value);
+            setInputValue(event.target.value);
           }}
           placeholder="Search..."
         />
-        {/* <button type="submit" className={s.searchBtn}>
+        <button type="submit" className={s.searchBtn}>
           Search
-        </button> */}
+        </button>
       </form>
     </div>
   );

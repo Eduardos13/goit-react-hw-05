@@ -5,24 +5,3 @@
   height: 80px;
   padding: 15px 30px;
 }
-
-.navigationList {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navigationItem {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.link {
-  color: white;
-  text-decoration: none;
-}
-
-.active {
-  color: black;
-  text-decoration: underline;
-}

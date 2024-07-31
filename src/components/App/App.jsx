@@ -1,19 +1,22 @@
 import React, { Suspense, lazy } from 'react';
-import Header from '../Header/Header';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Header from '../Header/Header';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('../../pages/MoviesPage/MoviesPage'));
 const MovieDetailsPage = lazy(() =>
   import('../../pages/MovieDetailsPage/MovieDetailsPage')
 );
+const MoviesOfTheDay = lazy(() => import('../MoviesOfTheDay/MoviesOfTheDay'));
+const MoviesOfTheWeek = lazy(() =>
+  import('../MoviesOfTheWeek/MoviesOfTheWeek')
+);
+const Cast = lazy(() => import('../MovieCast/MovieCast'));
+const Reviews = lazy(() => import('../MovieReviews/MovieReviews'));
 const NotFoundPage = lazy(() =>
   import('../../pages/NotFoundPage/NotFoundPage')
 );
-import MoviesOfTheDay from '../MoviesOfTheDay/MoviesOfTheDay';
-import MoviesOfTheWeek from '../MoviesOfTheWeek/MoviesOfTheWeek';
-import MovieCast from '../MovieCast/MovieCast';
-import MovieReviews from '../MovieReviews/MovieReviews';
+
 const App = () => {
   return (
     <div>
@@ -27,8 +30,8 @@ const App = () => {
           </Route>
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-            <Route path="cast" element={<MovieCast />} />
-            <Route path="reviews" element={<MovieReviews />} />
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
